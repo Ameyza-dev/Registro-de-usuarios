@@ -1,0 +1,38 @@
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-body">
+      <span class="h3">Lista de usuarios</span>
+      <button class="btn btn-dark btn-lg float-end" routerLink="/create-user">Agregar usuario</button>
+
+      <table class="table table-hover mt-4">
+        <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nombre</th>
+          <th>Apellidos</th>
+          <th>Correo</th>
+          <th>Contraseña</th>
+          <th></th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let u of users; let idx=index;" >
+          <td>{{ u.id}}</td>
+          <td>{{ u.name }}</td>
+          <td>{{ u.last_name }}</td>
+          <td>{{ u.email }}</td>
+          <td>{{ u.password}}</td>
+          <td>
+            <i (click)="showAddress(u)" class="far fa-address-book me-3 fa-lg"></i>
+          </td>
+          <td>
+            <i (click)="select(u)" class="far fa-edit fa-lg text-info me-3" ></i>
+            <i (click)="delete(u)" class="far fa-trash-alt fa-lg text-danger"></i>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
